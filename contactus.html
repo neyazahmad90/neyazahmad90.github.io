@@ -1,0 +1,58 @@
+<style>
+	.man4 {
+		margin-right: -0px;
+		margin-bottom: -20%;
+	}
+</style>
+<section class="bg-contactus ng-scope" style="position:relative;box-shadow: rgba(39, 39, 39, 0.52) 9px 2px 17px 6px;">
+    <div class="font-blue p-t-20 font-light text-center" style="padding: 50px;font-size: 1.2rem;">
+        <div>We are constantly striving to make ourselves better!</div>
+        <div>Get in touch with our team for any queries or feedback here.</div>
+    </div>
+    	<div class="man4 hidden-xs" style="position: absolute; bottom: -20px; right: -40px; ">
+    	                    <img src="images/contactus-bubble.png" width="105%">
+        </div>
+    <div class="row" style="margin: 0px;padding-bottom: 45px;">
+    	
+        <div class="col-md-12">
+            <div class="text-center">
+                <div class="m-20">
+                    <div class="wid-25 mob-wid">
+                        <input type="text" class="form-control psr-input" placeholder="E-mail">
+                    </div>
+                </div>
+                <div class="m-20">
+                    <div class="wid-25 mob-wid">
+                        <input type="text" class="form-control psr-input" placeholder="Phone number">
+                    </div>
+                </div>
+                <div class="m-20">
+                    <div class="wid-25 mob-wid">
+                        <textarea rows="3" class="form-control psr-input" placeholder="Message">
+                        </textarea>
+                    </div>
+                </div>
+                <div style="margin: 20px 0px 20px;">
+                    <div class="wid-25 mob-wid-75">
+                        <div class="btn-1-div" style="display: inline-block;width: 80%">
+                            <button type="submit" class="btn btn-md btn-1">SUBMIT</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+	$('section').mousemove(function(e) {
+            var change;
+            var xpos=e.clientX;var ypos=e.clientY;var left= change*20;
+            var  xpos=xpos*2;ypos=ypos*2;
+            // $('.man4').css('top',((0+(ypos/50))+"px"));
+            // $('.man4').css('right',(( 0+(xpos/80))+"px"));
+            $('.man4').css('bottom',((-20+(ypos/50))+"px"));
+            $('.man4').css('right',(( -40+(xpos/80))+"px"));
+
+        });
+</script>

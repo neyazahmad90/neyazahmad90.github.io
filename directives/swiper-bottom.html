@@ -1,0 +1,17 @@
+<div class="bottom-section bg-pink">
+    <div style="font-size: .75rem;height: 75px;overflow: hidden;">
+        {{content}}
+    </div> 
+    <div class="text-center bottom-buttons">
+        <div class="like-btn" ng-click='like = !like' ng-class="{'like': like}"> 
+            <span class="fa fa-star"></span> 
+            <span style="font-size: .65rem; margin-left: 5px; ">{{ like ? '1 ' : '' }} LIKE</span> 
+        </div>
+        <div class="share-btn" ng-click="sharingFunction({ 'data': swiperData});"> 
+            <span style="font-size: .65rem; ">SHARE IT</span> 
+            <div class="font-pink bg-white" style="height: 18px; width: 18px; border-radius: 50%; margin-left: 5px; display: inline-block; text-align: center; "> 
+                <div class="fa fa-share-alt"></div> 
+            </div> 
+        </div> 
+    </div>
+</div>

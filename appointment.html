@@ -1,0 +1,252 @@
+<!-- First fold starting-->
+<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+<!-- Custom styles for this template -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css">
+<section class="bg-appointment">
+    <div class="jumbotron bg-dots" style="padding:48px 0 83px;margin-bottom: 0px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-center">
+                        <div>
+                            <div class="wid-25 mob-block m-w-100 m-m-b-10">
+                                <input type="text" class="form-control psr-input" placeholder="Phone number">
+                            </div>
+                        </div>
+                        <div style="margin: 20px 0px;">
+                            <div class="wid-25 mob-block m-w-100 m-m-b-10">
+                                <input type="text" class="form-control psr-input" placeholder="Name">
+                            </div>
+                            <div class="wid-25 mob-block m-w-100 m-m-b-10">
+                                <input type="text" class="form-control psr-input" placeholder="Surname">
+                            </div>
+                            <div class="wid-25 mob-block m-w-100">
+                                <input type="text" class="form-control psr-input" placeholder="Age">
+                            </div>
+                        </div>
+                        <div class="mob-block" style="justify-content: center;display: flex;margin: 20px 0px;">
+                            <div class="wid-25 mob-block m-w-100 m-m-b-10">
+                                <div class="date" style="color: rgba(48,26,111,1);background: #fff;padding: 30px;">
+                                    <div class="text-left">
+                                        <label style="font-size: 1rem; ">Pick a date</label>
+                                    </div>
+                                    <div id="datepicker"></div>
+                                    <input type="hidden" id="my_hidden_date">
+                                </div>
+                            </div>
+                            <div class="wid-25 mob-block m-w-100 m-m-b-10">
+                                <div style="background-color: #fff; padding: 30px;height: 100%;">
+                                    <input type="time" class="form-control psr-input" placeholder="Time" style="display: none; " id="endtime" value="01:30">
+                                    <input type="time" class="form-control psr-input" placeholder="Time" style="display: none; " id="starttime" value="00:30">
+                                    <input type="hidden" id="timedifference" value="1">
+                                    <div class="text-center">
+                                        <div style="height: 200px; font-size: 1.3rem; color: rgba(48,26,111,1); min-height: 200px; ">
+                                            <div class="text-left">
+                                                <label style="font-size: 1rem;">Choose time</label>
+                                            </div>
+                                            <div class="row mob-block" style="justify-content: center; align-items: center;height: 100%; ">
+                                                <div class="time-picker-component" style="position: relative; ">
+                                                    <div style="margin: 20px 0px 20px;">
+                                                        <div class="wid-70" style="text-align: center; ">
+                                                            <div class="btn-1-div" style="display: inline-block; ">
+                                                                <button type="button" ng-class="{'active': timeButton1 === true}" ng-click="timeButton1 = true" class="btn btn-md btn-1">9 AM - 1:30 PM</button>
+                                                            </div>
+                                                            <div class="btn-1-div" style="margin-top: 15px;display: inline-block;">
+                                                                <button type="button" ng-class="{'active': timeButton1 === false}" ng-click="timeButton1 = false" class="btn btn-md btn-1">5 PM - 8 PM</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wid-25 mob-block m-w-100 m-m-b-10">
+                                <div style="background-color: #fff;padding: 30px;height: 100%;">
+                                    <div class="text-center">
+                                        <div class="appointment-mob-textarea-height" style="height: 200px; font-size: 1.3rem; color: rgba(48,26,111,1); min-height: 200px; ">
+                                            <div class="text-left">
+                                                <label style="font-size: 1rem;">Reason/Problem</label>
+                                            </div>
+                                            <div class="row appointment-mob-textarea" style="justify-content: center;/* align-items: center; *//* color: rgba(48,26,111,1); */height: 100%;">
+                                                <textarea class="form-control psr-input" placeholder="Type your reason here" id="exampleTextarea" rows="3" style="height: 90%; margin: 16px 16px 0px; border-radius: 0px; border: navajowhite; background-color: #f3f8f9; "></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin: 30px 0px 20px;">
+                            <div class="wid-25 mob-block m-w-100 m-m-b-10">
+                                <input type="text" class="form-control psr-input" placeholder="Email">
+                            </div>
+                        </div>
+                        <div style="margin: 20px 0px 20px;">
+                            <div class="wid-25 mob-block m-w-100 m-m-b-10">
+                                <div class="btn-1-div" style="display: inline-block;width: 80%">
+                                    <button type="submit" class="btn btn-md btn-1">SUBMIT</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<!-- First fold ending-->
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+<script>
+// function getRandomArbitrary(min, max) {
+//     return (Math.random() * (max - min) + min).toPrecision(2);
+// };
+// function mWordAnimation() { // splitWord selector
+//     var sw =  $('.split-words')[0].innerText;
+//     var words = sw.split(' ');
+//     htmlx = '';
+//     for(var i = 0 ; i<words.length;i++)
+//     {
+//         delay = getRandomArbitrary(0.1, 2.4);
+//         htmlx = htmlx+"<div class='word'><div class='word-inner' style='transition-delay: "+delay+"s;'>"+words[i]+"</div></div>&nbsp;";     
+//     }
+//     $('.split-words').html(htmlx);
+//     $('.split-words').find('.word').each(function(i,_word) {
+//         _word.style.width = _word.clientWidth+'px';
+//         $(_word).find('.word-inner').css('width','0px');
+//     });
+// }
+
+// var startPsrAnimation = function() {
+//     $('.animation-block').each(function(index, value) {
+//             if($(this).hasClass('active'))
+//                 return;
+//             var top_of_element = jQuery(this).offset().top;
+//             var bottom_of_element = jQuery(this).offset().top + jQuery(this).outerHeight();
+//             var top_of_screen = jQuery(window).scrollTop();
+//             var bottom_of_screen = jQuery(window).scrollTop() + jQuery(window).height();
+
+//             if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element) && (bottom_of_screen - top_of_element > 180)) {
+//                 // The element is visible, do something
+//                 //console.log('visibile'+index);
+//                 $(this).addClass('active');
+//                 $(this).find('.m-line-animation').addClass('m-animate');
+//                 var t = this;
+//                 setTimeout(function(){
+//                     var that = t;
+//                     $(that).find('.m-letter-animation').addClass('m-animate');
+//                     setTimeout(function(){
+//                        // mWordAnimation($(that).find('.split-words'));
+//                         $(that).find('.m-word-animation').addClass('m-animate');
+//                     },1000);
+//                 },600);
+
+//             } else {
+//                 //console.log('not');
+//                 // The element is not visible, do something else
+//             }
+//         });
+// }
+
+// // $(window).on("scroll", function(e) {
+// //         calculateOpacity();
+// //     })
+// calculateOpacity = function() {
+//     var t = 0
+//       , i = $(window).height()
+//       , r = 0
+//       , n = 0;
+//     $('.m-story h1').each(function() {
+//         t = $(this).offset().top - 500,
+//         r = i / (t + $(this).height() / 2 + i / 2),
+//         r > 1 && 2 > r && (console.log(r + " " + n),
+//         n = 2 - r.toPrecision(2),
+//         $(this).css("opacity", n))
+//     })
+// };
+
+$(document).ready(function() {
+    //mWordAnimation();
+    //startPsrAnimation();
+    // setTimeout(function(){
+    //     $('.animation-block').addClass('active');
+    // },300);
+    $('#datepicker').datepicker();
+    $('#datepicker').on('changeDate', function() {
+        $('#my_hidden_date').val(
+            $('#datepicker').datepicker('getFormattedDate')
+        );
+    });
+});
+$('.bg-appointment').mousemove(function(e) {
+    var change;
+    var xpos = e.clientX;
+    var ypos = e.clientY;
+    var left = change * 20;
+    var xpos = xpos * 2;
+    ypos = ypos * 2;
+    $('.bg-dots').css('background-position', ((0 + (ypos / 50)) + "px ") + ((0 + (xpos / 80)) + "px"));
+
+});
+
+function pad(d) {
+    return (d < 10) ? '0' + d.toString() : d.toString();
+}
+
+$('.indicator-up .up').on('click', function(ev) {
+    // body...
+    var timeDifference = $('#timedifference').val();
+    var starttime = $('#starttime').val();
+    var endtimeValue = $('#endtime').val();
+    var tempSTime = starttime.split(':');
+    var starttimeObj = {
+        hours: parseInt(tempSTime[0]),
+        minutes: parseInt(tempSTime[1])
+    };
+    var tempETime = endtimeValue.split(':');
+    var endtimeObj = {
+        hours: parseInt(tempETime[0]),
+        minutes: parseInt(tempETime[1])
+    };
+    // handing period AM / PM
+    if (endtimeObj.hours >= "12")
+        $('.period').text('pm');
+    else
+        $('.period').text('am');
+
+    // handing starttime
+    if (starttimeObj.hours == "23") {
+        $('.starttime .hrs').text('00');
+        var st_hidden = "00:" + starttimeObj.minutes;
+        $('#starttime').val(st_hidden);
+    } else {
+        $('.starttime .hrs').text(starttimeObj.hours + 1);
+        var _hrs = pad(starttimeObj.hours + 1);
+        var st_hidden = _hrs + ":" + starttimeObj.minutes;
+        $('#starttime').val(st_hidden);
+    }
+
+    if (endtimeObj.hours == "23") {
+        $('.endtime .hrs').text('00');
+        var et_hidden = "00:" + endtimeObj.minutes;
+        $('#endtime').val(et_hidden);
+    } else {
+        $('.endtime .hrs').text(endtimeObj.hours + 1);
+        var _hrs = pad(endtimeObj.hours + 1);
+        var et_hidden = _hrs + ":" + endtimeObj.minutes;
+        $('#endtime').val(et_hidden);
+    }
+
+});
+// #### visible element check
+// $(window).scroll(function(e) {
+//         e.preventDefault();
+//         startPsrAnimation();
+
+
+//     });
+</script>

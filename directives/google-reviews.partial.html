@@ -1,0 +1,27 @@
+
+<div class="googlereview">
+    <div class="upper-section">
+        <div class="row">
+            <div class="col-md-8"> 
+                <div class="organisation">{{details.name}}</div>
+                <div class="full-address">
+                    {{details.formatted_address}}
+                </div>
+                <div class="rating">
+                    <span class="score">{{details.rating}}</span>
+                        <rating-stars ng-if="details.rating" rating="{{details.rating}}"></rating-stars>
+                    <span class="total-review-count">240+ reviews
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-4 text-right">
+                <a href="https://search.google.com/local/writereview?placeid=ChIJ_3G-cduZyzsRatQsCXlBSsE" target="_blank" class="btn btn-primary btn-sm btn-review"><span class="fa fa-pencil" style="padding-right: 5px;"></span>Write a review</a>
+            </div>
+        </div>
+    </div>
+    <div class="main-section">
+        <div class="users-reviews">
+            <user-review ng-repeat='review in reviews' review-data="review"></user-review>
+        </div>
+    </div>
+</div>

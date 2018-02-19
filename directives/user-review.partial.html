@@ -1,0 +1,19 @@
+<div class="user-review">
+    <div class="reviewer-profile">
+        <div>
+            <img ng-src="{{reviewData.profile_photo_url}}" width="40px" style="margin-top: 20px;">
+        </div>
+    </div>
+    <div class="reviewer-details">
+            <div class="name">{{reviewData.author_name}}</div>
+            <div class="rating-details">
+                <div class="rating pull-left" data-title="{{reviewData.rating}}">
+                        <rating-stars ng-if="reviewData.rating" rating="{{reviewData.rating}}"></rating-stars>
+                </div>
+                <div class="timestamp pull-left">{{reviewData.relative_time_description}}</div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="review">{{reviewData.text}}
+            </div>
+    </div>
+</div>

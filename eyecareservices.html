@@ -1,0 +1,77 @@
+<section style="padding-top: 75px;height: 700px;overflow: hidden;" class="bg-purple eyecareservice-section">
+    <div>
+        <div>
+            <div class="row c-reset">
+                <div class="col-md-8" style="background: url('{{ windowWidth <= 500 ? currentService.serviceImage : blank}}') center/cover no-repeat;">
+                    <div style="padding-left: 35px;">
+                        <div class="homepage-content-block text-left" style="width: 50%;position: relative;z-index: 2;">
+                            <div class="content-block-mini-heading font-pink m-b-10 m-font-m2">
+                                {{currentService.pointNumber}}
+                            </div>
+                            <div class="content-block-heading text-upper">{{currentService.serviceName}}</div>
+                            <div class="content-block-content" style="font-weight: 200; ">
+                                {{currentService.serviceDetails}}
+                            </div>
+                            <div class="content-block-cta text-left">
+                                <div class="c-init" style="width: 200px; display: inline-block;padding-top: 30px;">
+                                    <div class="btn-1-div">
+                                        <button type="button" ui-sref="appointment" class="btn btn-md btn-1">Consult us</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" style="padding: 0; ">
+                    <div style="background-image: url('images/lasik/lasik-background-min.png');background-size: cover;height: 400px;padding: 30px;position: relative;z-index: 2;">
+                        <ul style="list-style-type: decimal-leading-zero;font-weight: 500;font-size: 1.2rem;position: relative; z-index: 2;" class="m-font-m2 m-font-bold">
+                            <li style="padding-left: 10px; padding-bottom: 20px;cursor: pointer;" class="each-service" ng-repeat="service in servicesObj" ng-click="openService($index)">
+                                <span class="service-name" ng-class="{'active' : service.isActive}">
+                                    {{ service.serviceName }}
+                                    <span class="m-bottom-line"></span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row c-reset" style="height: 250px;position: relative;z-index: 2;">
+                        <div class="col-md-3" style="padding: 0px; ">
+                            <div class="{{currentService.smallSquare}}" style="height: 50%;position: relative;z-index: 2;"></div>
+                        </div>
+                        <div class="col-md-9" style="padding: 0px; ">
+                            <div class="{{currentService.bigSquare}}" style="height: 100%;">
+                                <div class="homepage-content-block text-right" style="position: relative;z-index: 2;padding-right: 30px;">
+                                    <div class="content-block-mini-heading font-pink m-b-10 m-font-m2">NEXT</div>
+                                    <div class="content-block-heading text-upper" ng-class="{'last-activate' : nextService.pointNumber === '01'}" style="width: 200px; display: inline-block;font-size: 1.5rem; line-height: initial; ">{{nextService.serviceName}} </div>
+                                    <div class="content-block-content" ng-class="{'last-padding-change' : nextService.pointNumber === '01'}" style="font-weight: 200;padding-right: 0px;padding-top: 30px;">
+                                        <div class="services-arrow font-pink pointer" ng-click="previousButtonClick()" style="display: inline-block; width: 25px; height: 25px; text-align: center; padding-top: 2px; border-radius: 20px; background-color: #fff; margin-right: 15px;">
+                                            <span class="fa fa-chevron-left"></span>
+                                        </div>
+                                        <div class="services-arrow font-pink pointer" ng-click="nextButtonClick();" style="display: inline-block; width: 25px; height: 25px; text-align: center; padding-top: 2px; border-radius: 20px; background-color: #fff; ">
+                                            <span class="fa fa-chevron-right"></span>
+                                        </div>
+                                    </div>
+                                    <div class="content-block-cta text-left"> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-if="currentService.pointNumber === '01'" class="d-none d-md-block" style="position: absolute; top: 0px;overflow: hidden;z-index: 0;height: 700px;">
+            <img ng-src="{{currentService.serviceImage}}" alt="{{currentService.serviceName}}" width="75%">
+        </div>
+        <div ng-if="currentService.pointNumber !== '01'" class="d-none d-md-block" style="position: absolute; top: 74px;overflow: hidden;z-index: 0;height: 626px;">
+            <img ng-src="{{currentService.serviceImage}}" alt="{{currentService.serviceName}}" width="75%">
+        </div>
+    </div>
+</section>
+<style>
+.last-activate {
+    width: 229px !important;
+}
+
+.last-padding-change {
+    padding-top: 15px !important;
+}
+</style>

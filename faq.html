@@ -1,0 +1,43 @@
+<style>
+.bg-faq {
+    transition: all 1s ease;
+}
+
+.bg-faq.lasikvala {
+    background-position: 0px -147px !important;
+}
+</style>
+<section class="bg-faq" ng-class="{'lasikvala' : !cataractActive}">
+    <div class="text-center faq-mob-main-heading-pad p-t-40" style="
+    padding-top: 80px;
+">
+        <h1 class="text-upper">Frequently Asked Questions</h1>
+    </div>
+    <div>
+        <div class="text-center faq-mob-tab-padding p-t-40 text-upper" style="padding-top: 120px;padding-bottom: 80px;">
+            <div class="c-init" style="width: 150px; display: inline-block;padding-top: 30px;">
+                <div class="btn-1-div">
+                    <button type="button" ng-click="cataractActive=true;" ng-class="{'active' : cataractActive}" class="btn btn-md btn-1">Cataract</button>
+                </div>
+            </div>
+            <div class="c-init" style="width: 150px;margin-left: 50px; display: inline-block;padding-top: 30px;">
+                <div class="btn-1-div">
+                    <button type="button" ng-click="cataractActive=false;" ng-class="{'active' : !cataractActive}" class="btn btn-md btn-1">Lasik</button>
+                </div>
+            </div>
+            <!-- <a href="javascript:void(0);" class="btn btn-md" ng-click="cataractActive=true;" ng-class="{'btn-faq-inactive' : !cataractActive}" style="background-image: url('images/catract-banner-btn.svg');background-color: #356ded;font-family: 'Museosans2';letter-spacing: 2px;background-position: center;background-size: cover;border-radius: 21px;color: #fff;padding: 7px 15px;background-repeat: no-repeat;min-width: 129px;margin: 10px 30px;">Cataract</a> -->
+            <!-- <a href="javascript:void(0);" class="btn btn-md" ng-click="cataractActive=false;" ng-class="{'btn-faq-inactive' : cataractActive}" style="background-image: url('images/catract-banner-btn.svg');background-color: #356ded;font-family: 'Museosans2';letter-spacing: 2px;background-position: center;background-size: cover;border-radius: 21px;color: #fff;padding: 7px 15px;background-repeat: no-repeat;min-width: 129px;margin: 10px 30px;">Lasik</a> -->
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div id="accords" style="color: initial;">
+                    <my-accordian ng-if="cataractActive" faq-list="cataractFAQ"></my-accordian>
+                    <my-accordian ng-if="!cataractActive" faq-list="lasikFAQ"></my-accordian>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

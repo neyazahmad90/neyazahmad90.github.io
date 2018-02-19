@@ -1,0 +1,98 @@
+<!-- First fold starting-->
+<div ui-view="main"></div>
+<div ui-view="testpage"></div>
+<!-- Second fold ending-->
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script>
+function getRandomArbitrary(min, max) {
+    return (Math.random() * (max - min) + min).toPrecision(2);
+};
+
+function mWordAnimation() { // splitWord selector
+    var sw = $('.split-words')[0].innerText;
+    var words = sw.split(' ');
+    htmlx = '';
+    for (var i = 0; i < words.length; i++) {
+        delay = getRandomArbitrary(0.1, 2.4);
+        htmlx = htmlx + "<div class='word'><div class='word-inner' style='transition-delay: " + delay + "s;'>" + words[i] + "</div></div>&nbsp;";
+    }
+    $('.split-words').html(htmlx);
+    $('.split-words').find('.word').each(function(i, _word) {
+        _word.style.width = _word.offsetWidth + 10 + 'px';
+        $(_word).find('.word-inner').css('width', '0px');
+    });
+}
+
+var startPsrAnimation = function() {
+    $('.animation-block').each(function(index, value) {
+        if ($(this).hasClass('active'))
+            return;
+        var top_of_element = jQuery(this).offset().top;
+        var bottom_of_element = jQuery(this).offset().top + jQuery(this).outerHeight();
+        var top_of_screen = jQuery(window).scrollTop();
+        var bottom_of_screen = jQuery(window).scrollTop() + jQuery(window).height();
+
+        if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element) && (bottom_of_screen - top_of_element > 180)) {
+            // The element is visible, do something
+            //console.log('visibile'+index);
+            $(this).addClass('active');
+            $(this).find('.m-line-animation').addClass('m-animate');
+            var t = this;
+            setTimeout(function() {
+                var that = t;
+                $(that).find('.m-letter-animation').addClass('m-animate');
+                setTimeout(function() {
+                    // mWordAnimation($(that).find('.split-words'));
+                    $(that).find('.m-word-animation').addClass('m-animate');
+                }, 1000);
+            }, 600);
+
+        } else {
+            //console.log('not');
+            // The element is not visible, do something else
+        }
+    });
+}
+
+// $(window).on("scroll", function(e) {
+//         calculateOpacity();
+//     })
+
+
+$(document).ready(function() {
+    //mWordAnimation();
+    //$('body').css('overflow','hidden');
+    startPsrAnimation();
+    // setTimeout(function(){
+    //     $('.animation-block').addClass('active');
+    // },300);
+
+
+});
+$('.bg-vision-test, .bg-vision-dots').mousemove(function(e) {
+    var change;
+    var xpos = e.clientX;
+    var ypos = e.clientY;
+    var left = change * 20;
+    var xpos = xpos * 2;
+    ypos = ypos * 2;
+    $('.vision-bubble').css('top', ((0 + (ypos / 50)) + "px"));
+    $('.vision-bubble').css('right', ((0 + (xpos / 80)) + "px"));
+    $('.bubbly2').css('bottom', ((-20 + (ypos / 50)) + "px"));
+    $('.bubbly2').css('left', ((-40 + (xpos / 80)) + "px"));
+    $('.bg-vision-dots').css('background-position', ((91 + (ypos / 50)) + "px ") + ((-406 + (xpos / 80)) + "px"));
+});
+// function openTnC() {
+//     $('.bg-vision-test').slideToggle();
+//     $('body').css('overflow','');
+// }
+// #### visible element check
+$(window).scroll(function(e) {
+    e.preventDefault();
+    startPsrAnimation();
+
+
+});
+</script>

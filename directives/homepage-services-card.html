@@ -1,0 +1,16 @@
+<div class="col-md-4">
+    <div class='m-services-card text-center'>
+        <div class="cataract-surgery-icon">
+            <img ng-src="{{service.icon}}" alt="" height="50px">
+        </div>
+        <div class="m-service-heading font-blue text-upper">{{ service.heading }}</div>
+        <div class="font-blue m-service-description">{{ service.description }}</div>
+        <div class="m-service-btn">
+            <div class="c-init" style="width: 200px; display: inline-block; "> 
+                <div class="btn-1-div">
+                    <button type="button" ng-click="openPage(service.state)" class="btn btn-md btn-1">Discover More</button> 
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>

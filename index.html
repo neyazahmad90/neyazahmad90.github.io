@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="psrApp" ng-controller="mainCtrl">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="PSR Eye Hospital">
+    <title ng-bind="Page.title()">PSR Eye Hospital</title>
+    <meta name="description" content="{{ Page.description() }}">
+    <link rel="image_src" href="{{ Page.image() }}"/>
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="{{ Page.title() }}">
+    <meta itemprop="description" content="{{ Page.description() }}">
+    <meta itemprop="image" content="{{ Page.image() }}">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="{{ Page.image() }}">
+    <!-- <meta name="twitter:site" content="@publisher_handle"> -->
+    <meta name="twitter:title" content="{{ Page.title() }}">
+    <meta name="twitter:description" content="{{ Page.description() }}">
+    <!-- <meta name="twitter:creator" content="@author_handle"> -->
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <meta name="twitter:image:src" content="{{ Page.image() }}">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="{{ Page.title() }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ Page.url() }}" />
+    <meta property="og:image" content="{{ Page.image() }}" />
+    <meta property="og:description" content="{{ Page.image() }}" />
+    <meta property="og:site_name" content="PSR Eye Hospital" />
+    <!-- <meta property="fb:admins" content="Facebook numberic ID" /> -->
+
+    <!-- Bootstrap core CSS -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByLm_cmqGEbAzqcQ7kNmCLDU0XXHAhgUw&libraries=places" async defer></script>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://idangero.us/swiper/dist/css/swiper.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <!-- Custom styles for this template -->
+    <link href="assets/css/custom.css" rel="stylesheet">
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/visible.js"></script>
+    <script src="assets/js/angular.js"></script>
+    <script src="assets/js/angular-ui-router.js"></script>
+    <style>
+    [ng\:cloak],
+    [ng-cloak],
+    [data-ng-cloak],
+    [x-ng-cloak],
+    .ng-cloak,
+    .x- ng-cloak {
+        display: none !important;
+    }
+    </style>
+</head>
+
+<body class="{{bodyClass}}" ng-cloak data-hijacking="off" data-animation="scaleDown">
+    <div id="app-wrap">
+        <top-navigation></top-navigation>
+        <ui-view ng-cloak></ui-view>
+        <app-footer></app-footer>
+        <div id="map" style="display:none;visibility: hidden;opacity:0;"></div>
+    </div>
+    <script>
+    calculateOpacity = function(that, translateYOffset) {
+        var elem_top = $(that).offset().top;
+        var window_top = $(window).scrollTop();
+        var n = $(window).height() / 4;
+        var diff = (elem_top - window_top);
+        var o = ((diff / n)),
+            _o;
+        _o = o;
+        if (o <= .3)
+            o = .3;
+        $(that).css("opacity", o);
+        if (diff < $(window).height() / 2)
+            $(that).css("transform", "translateY(" + (-_o * 30 + translateYOffset) + "px)");
+    };
+    </script>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://idangero.us/swiper/dist/js/swiper.min.js"></script>
+    <script src="assets/js/velocity.min.js"></script>
+    <script src="assets/js/velocity.ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/datafactory.js"></script>
+    <script src="assets/js/filters.js"></script>
+    <script src="assets/js/services.js"></script>
+    <script src="assets/js/alldirectives.js"></script>
+    <script src="assets/js/controllers.js"></script>
+</body>
+
+</html>

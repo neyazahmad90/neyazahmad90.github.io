@@ -1,0 +1,79 @@
+<div class="row c-reset vision-test-mob-row-height" style="height: 100vh;">
+    <div class="col-md-8 vision-test-pic-mob" ng-class="{'vision-test-1': testpage == 1, 'vision-test-2': testpage == 2,
+'vision-test-3': testpage == 3}">
+    </div>
+    <div class="col-md-4" style="background: url('images/lasik/lasik-background-min.png') center/cover no-repeat;padding: 100px 0px 30px 30px;display: flex;align-items: center;">
+        <div ng-if="testpage == 1">
+            <div class="question" style="color: #fff;font-family: 'Museosans2';font-size: 1.5rem;font-weight: 300;">
+                Which color appears to be the most used?
+            </div>
+            <div class="options" style="font-size: 1.2rem;">
+                <label for="options_1" style="display: block;">
+                    <input type="radio" id="options_1" name="option"> Orange
+                </label>
+                <label for="options_2" style="display: block;">
+                    <input type="radio" id="options_2" name="option"> Red
+                </label>
+                <label for="options_3" style="display: block;">
+                    <input type="radio" id="options_3" name="option"> Blue
+                </label>
+                <label for="options_4" style="display: block;">
+                    <input type="radio" id="options_4" name="option"> Yellow
+                </label>
+                <div class="c-init" style="width: 150px; display: inline-block; "> 
+                    <div class="btn-1-div">
+                        <button ng-click="changePage(2)" type="button" class="btn btn-md btn-1">NEXT</button> 
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div ng-if="testpage == 2">
+            <div class="question" style="color: #fff;font-family: 'Museosans2';font-size: 1.5rem;font-weight: 300;">
+                Which color stands out the most?
+            </div>
+            <div class="options" style="font-size: 1.2rem;">
+                <label for="options_1" style="display: block;">
+                    <input type="radio" id="options_1" name="option"> Green
+                </label>
+                <label for="options_2" style="display: block;">
+                    <input type="radio" id="options_2" name="option"> Pink
+                </label>
+                <label for="options_3" style="display: block;">
+                    <input type="radio" id="options_3" name="option"> Purple
+                </label>
+                <label for="options_4" style="display: block;">
+                    <input type="radio" id="options_4" name="option"> Red
+                </label>
+                <div class="c-init" style="width: 150px; display: inline-block; "> 
+                    <div class="btn-1-div">
+                        <button ng-click="changePage(3)" type="button" class="btn btn-md btn-1">NEXT</button> 
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div ng-if="testpage == 3">
+            <div class="question" style="color: #fff;font-family: 'Museosans2';font-size: 1.5rem;font-weight: 300;">
+                How many petals can you see?
+            </div>
+            <div class="options" style="font-size: 1.2rem;">
+                <label for="options_1" style="display: block;">
+                    <input type="radio" id="options_1" name="option"> 27
+                </label>
+                <label for="options_2" style="display: block;">
+                    <input type="radio" id="options_2" name="option"> 26
+                </label>
+                <label for="options_3" style="display: block;">
+                    <input type="radio" id="options_3" name="option"> 25
+                </label>
+                <label for="options_4" style="display: block;">
+                    <input type="radio" id="options_4" name="option"> 24
+                </label>
+                <div class="c-init" style="width: 150px; display: inline-block; "> 
+                    <div class="btn-1-div">
+                        <button type="button" class="btn btn-md btn-1">NEXT</button> 
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

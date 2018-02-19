@@ -1,0 +1,101 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+<style>
+#datepicker div.datepicker.datepicker-inline {
+    margin-left: 17px;
+    display: inline-block;
+}
+</style>
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <div style="margin: 20px 0px;">
+                        <div class="wid-40 consult-mob-input">
+                            <input type="text" class="form-control psr-input" placeholder="Phone number (Optional)">
+                        </div>
+                        <div class="wid-40 consult-mob-input">
+                            <input type="text" class="form-control psr-input" placeholder="Email">
+                        </div>
+                    </div>
+                    <div style="margin: 20px 0px;">
+                        <div class="wid-40 consult-mob-input">
+                            <input type="text" class="form-control psr-input" placeholder="Name">
+                        </div>
+                        <div class="wid-40 consult-mob-input">
+                            <input type="text" class="form-control psr-input" placeholder="Surname">
+                        </div>
+                    </div>
+                    <div class="mob-block" style="justify-content: center;display: flex;margin: 20px 0px;">
+                        <div class="wid-40 consult-mob-input">
+                            <div style="background-color: #fff;height: 100%;box-shadow: #dedede 1px 1px 11px 1px;">
+                                <div class="text-center">
+                                    <div style="height: 200px; font-size: 1.3rem; color: rgba(48,26,111,1); min-height: 200px; ">
+                                        <div style="padding: 5px 35px; background-color: #f43d81; color: #fff; ">
+                                            <label style="font-size: 1rem;">Choose a time slot
+                                                <br> convenient for you:</label>
+                                        </div>
+                                        <div class="row mob-block" style="justify-content: center; align-items: center;height: 100%; ">
+                                            <div class="time-picker-component" style="position: relative; ">
+                                                <div style="margin: 20px 0px 20px;">
+                                                    <div class="wid-60" style="text-align: center; ">
+                                                        <div class="btn-1-div" style="display: inline-block; ">
+                                                            <button type="submit" ng-class="{'active': timeButton1 === true}" ng-click="timeButton1 = true" class="btn btn-md btn-1">9 AM - 1:30 PM</button>
+                                                        </div>
+                                                        <div class="btn-1-div" style="margin-top: 15px;display: inline-block;">
+                                                            <button type="submit" ng-class="{'active': timeButton1 === false}" ng-click="timeButton1 = false" class="btn btn-md btn-1">5 PM - 8 PM</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wid-40 consult-mob-input">
+                            <div class="date" style="color: rgba(48,26,111,1);background: #fff;box-shadow: #dedede 1px 1px 11px 1px;">
+                                <div style="padding: 17px 20px;color: #fff;background-color: #f43d81;">
+                                    <label style="font-size: 1rem; ">Pick a date</label>
+                                </div>
+                                <div id="datepicker"></div>
+                                <input type="hidden" id="my_hidden_date">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin: 30px 0px 20px;">
+                        <div style="margin: 30px 0px 20px;" class="wid-50 consult-mob-textarea">
+                            <textarea class="form-control psr-input" placeholder="Message(Optional)" id="exampleTextarea" rows="3" style="height: 90%;border-radius: 0px;border: solid 2px #fff;background-color: #e4e4e436;box-shadow: #8563c738 3px 42px 246px 31px;"></textarea>
+                        </div>
+                    </div>
+                    <div style="margin: 20px 0px 20px;">
+                        <div class="wid-25 consult-mob-button">
+                            <div class="btn-1-div">
+                                <button type="submit" class="btn btn-md btn-1">SUBMIT</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+$(document).ready(function() {
+    //mWordAnimation();
+    //startPsrAnimation();
+    // setTimeout(function(){
+    //     $('.animation-block').addClass('active');
+    // },300);
+    $('#datepicker').datepicker();
+    $('#datepicker').on('changeDate', function() {
+        $('#my_hidden_date').val(
+            $('#datepicker').datepicker('getFormattedDate')
+        );
+    });
+
+
+});
+</script>

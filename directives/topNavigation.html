@@ -1,0 +1,109 @@
+ <style>
+     .m-fixed-top {
+        position: fixed;
+        margin: auto;
+        max-width: 2000px;
+        min-width: 1007px;
+        z-index: 1030;
+        left: 0px;
+        right: 0px;
+     }
+ </style>
+ <nav class="navbar navbar-expand-md navbar-dark bg-purple m-fixed-top" style="min-height: 76px;">
+        <div class="container">
+            <a class="navbar-brand m-navbar-brand" ng-click="topNavGoToPage('home')"><img src="images/PSR Logo.png" width="120px"></a>
+            <button class="navbar-toggler d-none" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto" style="font-family: 'Museosans2';text-transform: uppercase;font-size: 13px;">
+                <li class="nav-item" ui-sref-active="active">
+                    <a class="nav-link" ng-click="topNavGoToPage('cataract.about')">Cataract</a>
+                </li>
+                <li class="nav-item" ui-sref-active="active">
+                    <a class="nav-link" ng-click="topNavGoToPage('lasik.types')">Lasik</a>
+                </li>
+                <li class="nav-item" ui-sref-active="active">
+                    <a class="nav-link" ng-click="topNavGoToPage('appointment')">Book Appointment</a>
+                </li>
+                <li class="nav-item" ui-sref-active="active">
+                    <a class="nav-link" ng-click="topNavGoToPage('home')">Home</a>
+                </li>
+                </ul>
+                <!-- <form class="form-inline mt-2 mt-md-0">
+                  <input class="form-control mr-sm-2" id="searchbar" autofocus="{{showSearchBar}}" ng-class="{'m-opacity-1' : showSearchBar,'m-opacity-0' : !showSearchBar}" type="text" placeholder="Search" aria-label="Search here">
+                  <button class="btn btn-link curson-pointer" ng-click="showSearchBar = !showSearchBar" type="submit">
+                    <img src="images/SEARCH ICON.svg" width="15px" alt="Search bar">
+                  </button>
+                </form> -->
+                <div style="padding: 10px 20px"> 
+                   <img src="images/BURGER MENU.svg" ng-click="showBurgerMenu = !showBurgerMenu;showhideFunc();" class="curson-pointer" width="25px" alt="Search bar">
+                </div>
+            </div>
+        </div>
+        <div class="d-sm-block d-md-none" style="padding: 10px 20px;position: absolute;right: 4px;"> 
+           <img src="images/BURGER MENU.svg" ng-click="showBurgerMenu = !showBurgerMenu;showhideFunc();" class="curson-pointer" width="35px" alt="Search bar">
+        </div>
+    </nav>
+    <div class="custom-burger-menu" ng-class="{'open' : showBurgerMenu, 'closed': !showBurgerMenu && !showFromScope}" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0;z-index: 17;">
+        <div ng-class="{'shadow-l-r' : showBurgerMenu }" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 100%; transition: all 1.6s ease;background: #eb3c80;"></div> 
+
+            <div class="hidden-md-down default-size" style="height: 100%;position: relative; float: left;transition: all 1s ease;display: table;">
+                <div ng-class="{'shadow-l-r' : showBurgerMenu }" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 100%; transition: all .8s ease;background: #301a6f;"></div> 
+                <div ng-class="{'opacity-0' : !showBurgerMenu}" style="display: table-cell;vertical-align: middle;transition: all 1s;">
+                 <div class="m-custom-left-div">
+                    <p>3-5-886, Himmat Nagar,<br>
+                        Near Old M.L.A Quaters<br>
+                        Hyderabad - 500029<br>
+                        Telangana<br>
+                        8096665550 | 8099950055<br>
+                    </p>
+                    <div><a href="mailto:info@psreyehospital.com" class="font-pink">info@psreyehospital.com</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="default-size" style="height: 100%; float: left;transition:all 1s ease;display: table;position: relative; ">
+                
+                <div ng-class="{'opacity-0' : !showBurgerMenu}" style="transition: all 1s;display: table-cell;vertical-align: middle;">
+
+                    <div class="close-button curson-pointer" ng-click="showBurgerMenu = !showBurgerMenu;showhideFunc();">
+                        <span class="btn-close icon-close"></span>
+                    </div>
+                    <div class="m-custom-right-div">
+                    <div>
+                        <ul class="custom-fullbody-ul" style="text-align: right; list-style: none;line-height: 18px;">
+                            <li ng-repeat="item in allMenuItems" ng-click="showBurgerMenu = !showBurgerMenu">
+                                <a ng-if="item.state" class="nav-link m-underline-effect" ng-click="gotoPage(item.state)">{{item.name | uppercase}}</a>
+                                <a ng-if="!item.state" class="nav-link m-underline-effect">{{item.name | uppercase}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div><a href="mailto:info@psreyehospital.com" class="font-pink">info@psreyehospital.com</a></div>
+                </div>
+              </div>
+
+            </div>
+        
+    </div>
+
+    <style>
+        .custom-burger-menu div {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+    </style>
+
+    <!-- <script>
+        var prev = 0;
+        var $window = $(window);
+        var nav = $('nav.navbar');
+
+        $window.on('scroll', function(){
+          var scrollTop = $window.scrollTop();
+          nav.css({
+            top: scrollTop + 'px'
+          })
+          nav.toggleClass('hide-navbar', scrollTop > prev);
+          prev = scrollTop;
+        });
+    </script> -->
